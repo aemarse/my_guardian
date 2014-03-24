@@ -19,6 +19,7 @@ TESTING OUT THE URLS:
 RUNNING THE TEST CASES
 - from the main directory of the app, run:
 	python -m tests.test
+- by the way, the test.py app uses localhost:5000 to perform the last test, so you'll have to run the code locally...sorry about that.
 
 TO DROP THE ARTICLE COLLECTION FROM THE DB
 - from the main directory of the app, run:
