@@ -4,17 +4,17 @@ BTW, I'm using MongoHQ to host my database, and I already gave you an account (u
 
 TESTING OUT THE URLS:
 - GET /fetch_news
-	- Ex: localhost:5000/fetch_news?term=john+kerry
+	- Ex: http://my-guardian-code.herokuapp.com/fetch_news?term=john+kerry
 
 - GET /articles
-	- Ex: localhost:5000/articles?term=john+kerry
+	- Ex: http://my-guardian-code.herokuapp.com/articles?term=john+kerry
 
 - GET /article/<ObjectId>
-	- Ex: localhost:5000/articles/533077f05946bae69363c547
+	- Ex: http://my-guardian-code.herokuapp.com/articles/533077f05946bae69363c547
 
 - POST /article
 	- I've been running this from Terminal using curl
-	- Ex: curl -H "Content-type: application/json" -X POST http://127.0.0.1:5000/article -d '{"id":"533077f05946bae69363c547", "title": "New Title"}'
+	- Ex: curl -H "Content-type: application/json" -X POST http://my-guardian-code.herokuapp.com/article -d '{"id":"533077f05946bae69363c547", "title": "New Title"}'
 
 RUNNING THE TEST CASES
 - from the main directory of the app, run:
