@@ -14,6 +14,11 @@ GUARDIAN_FIELDS = 'show-fields=thumbnail'
 GUARDIAN_PAGE_SIZE = 'page-size=' + str(NUM_RESULTS)
 
 
+@app.route('/')
+def index():
+	return "Hello World!"
+
+
 @app.route('/fetch_news')
 def fetch_news():
 	"""
