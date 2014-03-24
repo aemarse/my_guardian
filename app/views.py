@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, render_template
 from flask.views import MethodView
 from app import app
 from app.models import Article
@@ -16,7 +16,7 @@ GUARDIAN_PAGE_SIZE = 'page-size=' + str(NUM_RESULTS)
 
 @app.route('/')
 def index():
-	return "Hello World!"
+	return render_template("index.html")
 
 
 @app.route('/fetch_news')
