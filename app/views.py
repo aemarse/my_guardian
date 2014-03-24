@@ -1,12 +1,10 @@
-from flask import request, redirect, render_template, url_for, jsonify
+from flask import request
 from flask.views import MethodView
 from app import app
 from app.models import Article
-import json, simplejson
+import simplejson
 import re
-from urllib2 import Request, build_opener, HTTPError, URLError, urlopen
-from bson import json_util
-from flask.ext.mongoengine import MongoEngine
+from urllib2 import Request, build_opener, HTTPError, URLError
 
 
 NUM_RESULTS = 5
@@ -79,7 +77,10 @@ class ArticleList(MethodView):
 	"""
 
 	def get(self):
+		# Get the search term from the request
 		term = request.args.get('term')
+
+		# If the search term exists, query the db w/ it
 		if term is None:
 			return "You need to specify a search term...you fool."
 		else:
@@ -89,11 +90,17 @@ class ArticleList(MethodView):
 
 
 class ArticleDetail(MethodView):
+	"""
+	Returns or updates the details on a specific
+	article according to its object_id
+	"""
 
+	# Returns json string of a specific article
 	def get(self, object_id):
 		article = Article.objects(pk=object_id)
 		return article.to_json()
 
+	# Updates title of a specific article
 	def post(self):
 		article_json = request.json
 		article_id = article_json["id"]
@@ -101,7 +108,7 @@ class ArticleDetail(MethodView):
 
 		Article.objects(id=article_id).update_one(set__title=article_title)
 
-		return "Article updated."
+		return Article.objects.get(id=article_id).to_json()
 
 # Register the URLs
 app.add_url_rule('/articles',
