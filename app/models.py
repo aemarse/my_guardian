@@ -1,4 +1,5 @@
 from app import db
+from flask import jsonify
 
 class Article(db.Document):
 	title = db.StringField()
