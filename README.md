@@ -10,11 +10,11 @@ TESTING OUT THE URLS:
 	- Ex: http://my-guardian-code.herokuapp.com/articles?term=john+kerry
 
 - GET /article/<ObjectId>
-	- Ex: http://my-guardian-code.herokuapp.com/articles/533077f05946bae69363c547
+	- Ex: http://my-guardian-code.herokuapp.com/article/5330a943e311e400075e8d82
 
 - POST /article
 	- I've been running this from Terminal using curl
-	- Ex: curl -H "Content-type: application/json" -X POST http://my-guardian-code.herokuapp.com/article -d '{"id":"533077f05946bae69363c547", "title": "New Title"}'
+	- Ex: curl -H "Content-type: application/json" -X POST http://my-guardian-code.herokuapp.com/article -d '{"id":"5330a943e311e400075e8d82", "title": "New Title"}'
 
 RUNNING THE TEST CASES
 - from the main directory of the app, run:
